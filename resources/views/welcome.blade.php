@@ -9,7 +9,7 @@
     <div class="carousel-inner">
         <!-- Slide 1 -->
         <div class="carousel-item active">
-            <img src="{{ asset('assets/Dewi-1.0.0/assets/img/SMKN 2 BANGKALAN.jpg') }}" class="d-block w-100 hero-img" alt="Gedung SMKN 2 Bangkalan">
+            <img src="{{ asset('assets/Dewi-1.0.0/assets/img/Banner dan logo/SMKN 2 BANGKALAN.jpg') }}" class="d-block w-100 hero-img" alt="Gedung SMKN 2 Bangkalan">
             <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-25 p-4 rounded">
                 <h2 class="fs-1 fw-bold text-center">UPJ SMK NEGERI 2 BANGKALAN</h2>
                 <p class="text-light fs-5 text-center">Unit Produksi & Jasa</p>
@@ -18,7 +18,7 @@
 
         <!-- Slide 2 -->
         <div class="carousel-item">
-            <img src="{{ asset('assets/Dewi-1.0.0/assets/img/pamflet2fix.jpg') }}" class="d-block w-100 hero-img" alt="Pamflet UPJ SMKN 2 Bangkalan">
+            <img src="{{ asset('assets/Dewi-1.0.0/assets/img/Banner dan logo/pamflet2fix.jpg') }}" class="d-block w-100 hero-img" alt="Pamflet UPJ SMKN 2 Bangkalan">
         </div>
     </div>
 
@@ -92,7 +92,7 @@
                 UPJ SMK Negeri 2 Bangkalan
               </h3>
               <img
-                src="{{ asset('assets/Dewi-1.0.0/assets/img/UPJ-KI.jpg') }}"
+                src="{{ asset('assets/Dewi-1.0.0/assets/img/Banner dan logo/UPJ-KI.jpg') }}"
                 class="img-fluid rounded-4 mb-4"
                 alt=""
               />
@@ -137,7 +137,7 @@
 
                 <div class="position-relative mt-4">
                   <img
-                    src="{{ asset('assets/Dewi-1.0.0/assets/img/tamnelvid.png') }}"
+                    src="{{ asset('assets/Dewi-1.0.0/assets/img/Banner dan logo/tamnelvid.png') }}"
                     class="img-fluid rounded-4"
                     alt=""
                   />
@@ -185,7 +185,7 @@
           </div><!-- End Client Item -->
 
           <div class="col-xl-2 col-md-3 col-6 client-logo">
-            <img src="assets/Dewi-1.0.0/assets/img/Logo Mitra SMK/logO MITSUBISHI.jpg" class="img-fluid" alt="">
+            <img src="assets/Dewi-1.0.0/assets/img/Logo Mitra SMK/logo MITSUBISHI.jpg" class="img-fluid" alt="">
           </div><!-- End Client Item -->
 
         </div>

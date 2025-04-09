@@ -34,7 +34,7 @@
         class="container-fluid container-xl position-relative d-flex align-items-center"
       >
         <a href="#" class="logo d-flex align-items-center me-auto">
-          <img src="{{ asset('assets/Dewi-1.0.0/assets/img/logosmkn2bkl.png') }}" alt="" width="180" height="50"/>
+          <img src="{{ asset('assets/Dewi-1.0.0/assets/img/Banner dan logo/logosmkn2bkl.png') }}" alt="" width="180" height="50"/>
         </a>
 
         <nav id="navmenu" class="navmenu">

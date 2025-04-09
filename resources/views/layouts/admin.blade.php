@@ -76,7 +76,7 @@
             <a href="index.html" class="app-brand-link">
               {{-- <span class="app-brand-text demo menu-text fw-bolder ms-2">Sneat</span> --}}
               <span class="app-brand-logo demo">
-               <img src="{{asset('assets/Dewi-1.0.0/assets/img/logo-smk-2.png')}}" width="150" alt="">
+               <img src="{{asset('assets/Dewi-1.0.0/assets/img/Banner dan logo/logo-smk-2.png')}}" width="150" alt="">
               </span>
             </a>
 
