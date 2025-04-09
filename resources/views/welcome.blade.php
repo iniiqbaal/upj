@@ -83,6 +83,75 @@
 
   <!-- Stats Section -->
 
+      <!-- About Section -->
+      <section id="about" class="about section">
+        <div class="container">
+          <div class="row gy-4">
+            <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
+              <h3>
+                UPJ SMK Negeri 2 Bangkalan
+              </h3>
+              <img
+                src="{{ asset('assets/Dewi-1.0.0/assets/img/UPJ-KI.jpg') }}"
+                class="img-fluid rounded-4 mb-4"
+                alt=""
+              />
+              <p>
+                Unit Produksi dan Jasa (UPJ) di SMK Negeri 2 Bangkalan adalah unit yang berfungsi sebagai wadah bagi siswa untuk menerapkan keterampilan yang mereka pelajari dalam lingkungan nyata. UPJ ini memungkinkan siswa untuk mengembangkan kompetensi mereka melalui proyek-proyek nyata, memberikan layanan kepada masyarakat, dan memproduksi barang atau jasa yang relevan dengan bidang keahlian mereka. 
+              </p>
+              <p>
+                Melalui UPJ, siswa dapat mengasah keterampilan praktis, memahami dinamika dunia kerja, dan mempersiapkan diri untuk tantangan profesional di masa depan.
+              </p>
+            </div>
+            <div class="col-lg-6" data-aos="fade-up" data-aos-delay="250">
+              <div class="content ps-0 ps-lg-5">
+                <p class="fw-bold">
+                  Tujuan dari Unit Produksi dan Jasa (UPJ) di SMK Negeri 2 Bangkalan adalah:
+                </p>
+                <ul>
+                  <li>
+                    <i class="bi bi-check-circle-fill"></i>
+                    <span
+                      >Meningkatkan Keterampilan Siswa Memberikan pengalaman kerja nyata agar siswa lebih siap menghadapi dunia industri.</span
+                    >
+                  </li>
+                  <li>
+                    <i class="bi bi-check-circle-fill"></i>
+                    <span
+                      >Menerapkan Kompetensi Keahlian Mengaplikasikan ilmu yang dipelajari di sekolah ke dalam proyek atau layanan nyata.</span
+                    >
+                  </li>
+                  <li>
+                    <i class="bi bi-check-circle-fill"></i>
+                    <span
+                      >Menghasilkan Produk dan Jasa Berkualitas Mengembangkan produk atau layanan yang bisa digunakan oleh masyarakat.</span
+                    >
+                  </li>
+                </ul>
+                <!-- <p>
+                  Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis
+                  aute irure dolor in reprehenderit in voluptate velit esse
+                  cillum dolore eu fugiat nulla pariatur. Excepteur sint
+                  occaecat cupidatat non proident
+                </p> -->
+
+                <div class="position-relative mt-4">
+                  <img
+                    src="{{ asset('assets/Dewi-1.0.0/assets/img/tamnelvid.png') }}"
+                    class="img-fluid rounded-4"
+                    alt=""
+                  />
+                  <a
+                    href="https://youtu.be/m7236NHZ5tQ?si=igoCSbJnmVXmtg-T"
+                    class="glightbox pulsating-play-btn"
+                  ></a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- /About Section -->
 
  <!-- Services Section -->
 <section id="services" class="services section">

@@ -28,14 +28,6 @@
 
     <!-- Main CSS File -->
     <link href="{{ asset('assets/Dewi-1.0.0/assets/css/main.css') }}" rel="stylesheet" />
-
-    <!-- =======================================================
-  * Template Name: assets/Dewi
-  * Template URL: https://bootstrapmade.com/assets/Dewi-free-multi-purpose-html-template/
-  * Updated: Aug 07 2024 with Bootstrap v5.3.3
-  * Author: BootstrapMade.com
-  * License: https://bootstrapmade.com/license/
-  ======================================================== -->
   </head>
 
   <body class="index-page">
