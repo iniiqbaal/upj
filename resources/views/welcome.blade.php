@@ -326,8 +326,11 @@
     </div>
   </section> --}}
   <!-- /Clients Section -->
+
+
+  
 <!-- Portfolio Section -->
-<section id="jasa" class="services section">
+<section id="portfolio" class="services section">
   <div class="container section-title" data-aos="fade-up">
     <h2>Kami juga menyediakan</h2>
     <p>Jasa</p>
@@ -347,7 +350,6 @@
             <div class="details position-relative text-center">
               <h3>{{ $service->nama_jasa }}</h3>
               <p>{{ Str::limit($service->deskripsi_jasa, 50) }}</p>
-              <p>Rp.{{ number_format($service->harga_jasa, 0, ',', '.') }}</p>
 
               <!-- Tombol WhatsApp -->
               <div class="icon">
@@ -381,7 +383,6 @@
                      class="img-fluid mb-3"
                      alt="{{ $service->nama_jasa }}">
                 <p>{{ $service->deskripsi_jasa }}</p>
-                <p class="fw-bold">Harga: Rp.{{ number_format($service->harga_jasa, 0, ',', '.') }}</p>
               </div>
               <div class="modal-footer">
                 <a href="https://wa.me/{{ $service->no_whatsapp }}?text={{ urlencode('Halo, saya tertarik dengan jasa ' . $service->nama_jasa . '. Apakah masih tersedia?') }}"
