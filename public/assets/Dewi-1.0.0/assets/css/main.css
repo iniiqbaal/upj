@@ -1250,6 +1250,14 @@ section,
   padding: 20px 0;
 }
 
+.clients-header {
+  text-align:initial;
+  font-size: 2rem;
+  color: #2c80c4;
+  margin-bottom: 10px; /* jarak ke logo */
+  padding: 0 20px;      /* jarak samping kiri-kanan */
+}
+
 .clients .client-logo {
   display: flex;
   justify-content: center;

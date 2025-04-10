@@ -157,15 +157,15 @@
 
 
     <section id="clients" class="clients section light-background">
-      <div class="clients" data-aos="fade-up">
-        <h3>Mitra SMK Negeri 2 Bangkalan</h3>
+      <div class="clients-header" data-aos="fade-up">
+        <h3>Mitra SMKN 2 BANGKALAN</h3>
       </div>
       <div class="container" data-aos="fade-up">
 
         <div class="row gy-4">
 
           <div class="col-xl-2 col-md-3 col-6 client-logo">
-            <img src="assets/Dewi-1.0.0/assets/img/Logo Mitra SMK/logo MPM.jpg" class="img-fluid" alt="">
+            <img src="assets/Dewi-1.0.0/assets/img/Logo Mitra SMK/logo HONDA MPM.jpg" class="img-fluid" alt="">
           </div><!-- End Client Item -->
 
           <div class="col-xl-2 col-md-3 col-6 client-logo">
@@ -185,7 +185,7 @@
           </div><!-- End Client Item -->
 
           <div class="col-xl-2 col-md-3 col-6 client-logo">
-            <img src="assets/Dewi-1.0.0/assets/img/Logo Mitra SMK/logo MITSUBISHI.jpg" class="img-fluid" alt="">
+            <img src="assets/Dewi-1.0.0/assets/img/Logo Mitra SMK/logo CONCERN.png" class="img-fluid" alt="">
           </div><!-- End Client Item -->
 
         </div>
