@@ -53,50 +53,54 @@
 
     @yield('content')
 
-    <!-- Footer start -->
-
     <footer id="footer" class="footer dark-background">
-      <div class="container footer-top">
-        <div class="row gy-4">
-          <div class="col-lg-4 col-md-6 footer-about">
-            <a href="index.html" class="logo d-flex align-items-center">
-              <span class="sitename">UPJ SMKN 2 BKL</span>
-            </a>
-            <div class="footer-contact pt-3">
-              <p>Jl. Halim Perdana Kusuma, Bangkalan - Jawa Timur</p>
-              <p class="mt-3">
-                <strong>Contact:</strong>
-              </p>
-              <p>
-              <span>+62 823-3314-6826</span> <p>(Finalia Meriana)</p>
-              </p>
-              <p><strong>Email:</strong> <span>smkn2_bkl@yahoo.com</span></p>
-            </div>
-            <div class="social-links d-flex mt-4">
-              <a href="https://www.tiktok.com/@smkn2_bangkalan/" target="_blank" ><i class="bi bi-tiktok"></i></a>
-              <a href="https://web.facebook.com/smkn2bkln/" target="_blank"><i class="bi bi-facebook"></i></a>
-              <a href="https://www.instagram.com/smkn2_bangkalan/" target="_blank"><i class="bi bi-instagram"></i></a>
-              <a href="https://wa.me/+6282333146826" target="_blank"><i class="bi bi-whatsapp"></i></a>
+  <div class="container footer-top">
+    <div class="row gy-4">
 
-            </div>
-          </div>
-
-      <div class="container copyright text-center mt-4">
-        <p>
-          © <span>Copyright 2025</span> | <strong class="px-1 sitename">SMK NEGERI 2 BANGKALAN</strong>
-          <span>All Rights Reserved</span>
-        </p>
-        <div class="credits">
-          <!-- All the links in the footer should remain intact. -->
-          <!-- You can delete the links only if you've purchased the pro version. -->
-          <!-- Licensing information: https://bootstrapmade.com/license/ -->
-          <!-- Purchase the pro version with working PHP/AJAX contact form: [buy-url] -->
-          {{-- Designed by
-          <a href="https://bootstrapmade.com/">BootstrapMade</a> Distributed by
-          <a href=“https://themewagon.com>ThemeWagon --}}
+      <!-- Kolom Kiri: Kontak -->
+      <div class="col-lg-4 col-md-6 footer-about">
+        <a href="index.html" class="logo d-flex align-items-center">
+          <span class="sitename">UPJ SMKN 2 BKL</span>
+        </a>
+        <div class="footer-contact pt-3">
+          <p>Jl. Halim Perdana Kusuma, Bangkalan - Jawa Timur</p>
+          <p class="mt-3"><strong>Contact:</strong></p>
+          <p><span>+62 823-3314-6826</span> <br>(Finalia Meriana)</p>
+          <p><strong>Email:</strong> <span>smkn2_bkl@yahoo.com</span></p>
+        </div>
+        <div class="social-links d-flex mt-4">
+          <a href="https://www.tiktok.com/@smkn2_bangkalan/" target="_blank"><i class="bi bi-tiktok"></i></a>
+          <a href="https://web.facebook.com/smkn2bkln/" target="_blank"><i class="bi bi-facebook"></i></a>
+          <a href="https://www.instagram.com/smkn2_bangkalan/" target="_blank"><i class="bi bi-instagram"></i></a>
+          <a href="https://wa.me/+6282333146826" target="_blank"><i class="bi bi-whatsapp"></i></a>
         </div>
       </div>
-    </footer>
+
+      <!-- Kolom Kanan: Gambar Maps yang bisa diklik -->
+      <div class="col-lg-4 col-md-6 footer-map">
+        <h5 class="mb-3">Lokasi Kami</h5>
+        <a href="https://www.google.com/maps/dir/?api=1&destination=-7.735083,112.752456" target="_blank" style="display: inline-block; border-radius: 8px; overflow: hidden;">
+          <img src="https://maps.googleapis.com/maps/api/staticmap?center=-7.735083,112.752456&zoom=17&size=400x250&markers=color:red%7Clabel:S%7C-7.735083,112.752456&key=YOUR_API_KEY"
+            alt="Lokasi SMKN 2 Bangkalan"
+            style="width: 100%; max-width: 100%; height: auto; border: 2px solid #eee; border-radius: 8px;" />
+        </a>
+        <p class="mt-2"><small>Klik gambar untuk membuka rute di Google Maps</small></p>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="container copyright text-center mt-4">
+    <p>
+      © <span>Copyright 2025</span> | <strong class="px-1 sitename">SMK NEGERI 2 BANGKALAN</strong>
+      <span>All Rights Reserved</span>
+    </p>
+    <div class="credits">
+      {{-- Designed by BootstrapMade - Custom by UPJ --}}
+    </div>
+  </div>
+</footer>
+
 
     <!-- Scroll Top -->
     <a
