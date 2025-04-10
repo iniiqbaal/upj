@@ -225,9 +225,10 @@
                                     <h3>{{ $item->name }}</h3>
                                     <p>{{ Str::limit($item->description, 50) }}</p>
                                     <p>Rp.{{ number_format($item->price, 0, ',', '.') }}</p>
-                                    <a href="#" class="btn btn-primary btn-sm mt-2" data-bs-toggle="modal" data-bs-target="#productModal{{ $item->id }}">
-                                        Lihat Detail
-                                    </a>
+                                    <button type="button"
+                                      class="btn btn-outline-primary btn-sm mt-2" data-bs-toggle="modal" data-bs-target="#productModal{{ $item->id }}">
+                                      Lihat Detail
+                                    </button>
                                 </div>
                             </div>
                         </div>
@@ -325,9 +326,8 @@
     </div>
   </section> --}}
   <!-- /Clients Section -->
-
-  <!-- Portfolio Section -->
-  <section id="jasa" class="services section">
+<!-- Portfolio Section -->
+<section id="jasa" class="services section">
   <div class="container section-title" data-aos="fade-up">
     <h2>Kami juga menyediakan</h2>
     <p>Jasa</p>
@@ -349,22 +349,28 @@
               <p>{{ Str::limit($service->deskripsi_jasa, 50) }}</p>
               <p>Rp.{{ number_format($service->harga_jasa, 0, ',', '.') }}</p>
 
-              <div class="d-flex justify-content-center">
-                <a href="#" class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#jasaModal{{ $service->id }}">
-                  Lihat Detail
-                </a>
-                <a href="https://wa.me/{{ $service->no_whatsapp }}?text={{ urlencode('Halo, saya tertarik dengan jasa ' . $service->nama_jasa . '. Apakah masih tersedia?') }}"
-                   target="_blank" class="btn btn-success btn-sm ms-2">
-                  Pesan
+              <!-- Tombol WhatsApp -->
+              <div class="icon">
+                <a href="https://wa.me/{{ $service->no_whatsapp }}?text={{ urlencode('Halo, saya tertarik dengan jasa ' . $service->nama_jasa . '. Apakah masih tersedia?') }}" 
+                  target="_blank">
+                  <i class="bi bi-whatsapp"></i>
                 </a>
               </div>
+
+              <!-- Tombol Detail Jasa -->
+              <button type="button"
+                      class="btn btn-outline-primary btn-sm mt-2"
+                      data-bs-toggle="modal"
+                      data-bs-target="#jasaModal{{ $service->id }}">
+                Lihat Detail
+              </button>
             </div>
           </div>
         </div>
 
         <!-- Modal Detail Jasa -->
         <div class="modal fade" id="jasaModal{{ $service->id }}" tabindex="-1" aria-labelledby="jasaModalLabel{{ $service->id }}" aria-hidden="true">
-          <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-dialog modal-dialog-centered modal-md">
             <div class="modal-content">
               <div class="modal-header">
                 <h5 class="modal-title" id="jasaModalLabel{{ $service->id }}">{{ $service->nama_jasa }}</h5>
@@ -390,8 +396,8 @@
     </div>
   </div>
 </section>
+<!-- /Portfolio Section -->
 
-  <!-- /Portfolio Section -->
 
 @endsection
 
