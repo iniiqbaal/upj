@@ -53,17 +53,18 @@
 
     @yield('content')
 
+    <!-- footer start -->
     <footer id="footer" class="footer dark-background">
   <div class="container footer-top">
     <div class="row gy-4">
 
-      <!-- Kolom Kiri: Kontak -->
+      <!-- Kontak Sekolah -->
       <div class="col-lg-4 col-md-6 footer-about">
         <a href="index.html" class="logo d-flex align-items-center">
           <span class="sitename">UPJ SMKN 2 BKL</span>
         </a>
         <div class="footer-contact pt-3">
-          <p>Jl. Halim Perdana Kusuma, Bangkalan - Jawa Timur</p>
+          <p>Jl. Halim Perdana Kusuma, Mlajah, Bangkalan - Jawa Timur</p>
           <p class="mt-3"><strong>Contact:</strong></p>
           <p><span>+62 823-3314-6826</span> <br>(Finalia Meriana)</p>
           <p><strong>Email:</strong> <span>smkn2_bkl@yahoo.com</span></p>
@@ -76,15 +77,11 @@
         </div>
       </div>
 
-      <!-- Kolom Kanan: Gambar Maps yang bisa diklik -->
+      <!-- Peta Lokasi Interaktif -->
       <div class="col-lg-4 col-md-6 footer-map">
         <h5 class="mb-3">Lokasi Kami</h5>
-        <a href="https://www.google.com/maps/dir/?api=1&destination=-7.735083,112.752456" target="_blank" style="display: inline-block; border-radius: 8px; overflow: hidden;">
-          <img src="https://maps.googleapis.com/maps/api/staticmap?center=-7.735083,112.752456&zoom=17&size=400x250&markers=color:red%7Clabel:S%7C-7.735083,112.752456&key=YOUR_API_KEY"
-            alt="Lokasi SMKN 2 Bangkalan"
-            style="width: 100%; max-width: 100%; height: auto; border: 2px solid #eee; border-radius: 8px;" />
-        </a>
-        <p class="mt-2"><small>Klik gambar untuk membuka rute di Google Maps</small></p>
+        <div id="map" style="width: 100%; height: 250px; border-radius: 12px;"></div>
+        <p class="mt-2"><small>Klik penanda merah untuk membuka rute ke lokasi</small></p>
       </div>
 
     </div>
@@ -101,6 +98,95 @@
   </div>
 </footer>
 
+<!-- Google Maps API -->
+<script>
+  function initMap() {
+    const smkn2Bangkalan = { lat: -7.036622, lng: 112.745833 }; // Lokasi SMKN 2 Bangkalan
+    const map = new google.maps.Map(document.getElementById("map"), {
+      zoom: 16,
+      center: smkn2Bangkalan,
+    });
+
+    const marker = new google.maps.Marker({
+      position: smkn2Bangkalan,
+      map: map,
+      title: "SMKN 2 Bangkalan",
+    });
+
+    const infoWindow = new google.maps.InfoWindow({
+      content: `<strong>SMKN 2 Bangkalan</strong><br><a href="https://www.google.com/maps/dir/?api=1&destination=-7.036622,112.745833" target="_blank">Arahkan ke sini</a>`,
+    });
+
+    marker.addListener("click", () => {
+      infoWindow.open(map, marker);
+    });
+  }
+</script>
+
+<!-- Ganti YOUR_API_KEY dengan API Key kamu -->
+<script async defer
+  src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap">
+</script>
+<!-- /footer -->
+
+
+<!-- footerr backup
+
+<footer id="footer" class="footer dark-background">
+  <div class="container footer-top">
+    <div class="row gy-4">
+      Kontak & Sosial Media
+      <div class="col-lg-4 col-md-6 footer-about">
+        <a href="index.html" class="logo d-flex align-items-center">
+          <span class="sitename">UPJ SMKN 2 BKL</span>
+        </a>
+        <div class="footer-contact pt-3">
+          <p>Jl. Halim Perdana Kusuma, Bangkalan - Jawa Timur</p>
+          <p class="mt-3">
+            <strong>Contact:</strong>
+          </p>
+          <p>
+            <span>+62 823-3314-6826</span>
+            <p>(Finalia Meriana)</p>
+          </p>
+          <p><strong>Email:</strong> <span>smkn2_bkl@yahoo.com</span></p>
+        </div>
+        <div class="social-links d-flex mt-4">
+          <a href="https://www.tiktok.com/@smkn2_bangkalan/" target="_blank"><i class="bi bi-tiktok"></i></a>
+          <a href="https://web.facebook.com/smkn2bkln/" target="_blank"><i class="bi bi-facebook"></i></a>
+          <a href="https://www.instagram.com/smkn2_bangkalan/" target="_blank"><i class="bi bi-instagram"></i></a>
+          <a href="https://wa.me/+6282333146826" target="_blank"><i class="bi bi-whatsapp"></i></a>
+        </div>
+      </div>
+
+       Peta Lokasi 
+      <div class="col-lg-4 col-md-6 footer-map">
+        <h5>Lokasi Kami</h5>
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3949.4064704027085!2d112.74988127404463!3d-7.735083876797339!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dd800ab66e90221%3A0x8f92e62a26971d6d!2sSMKN%202%20Bangkalan!5e0!3m2!1sen!2sid!4v1712823291774!5m2!1sen!2sid"
+          width="100%"
+          height="250"
+          style="border:0;"
+          allowfullscreen=""
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+        ></iframe>
+      </div>
+    </div>
+  </div>
+
+  <div class="container copyright text-center mt-4">
+    <p>
+      © <span>Copyright 2025</span> |
+      <strong class="px-1 sitename">SMK NEGERI 2 BANGKALAN</strong>
+      <span>All Rights Reserved</span>
+    </p>
+    <div class="credits">
+    </div>
+  </div>
+</footer>
+
+ /end footer backup -->
 
     <!-- Scroll Top -->
     <a
