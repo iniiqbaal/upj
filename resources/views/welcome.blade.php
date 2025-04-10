@@ -322,42 +322,70 @@
   <!-- /Clients Section -->
 
   <!-- Portfolio Section -->
- <section id="portfolio" class="portfolio section">
-<div class="container section-title" data-aos="fade-up">
+  <section id="jasa" class="services section">
+  <div class="container section-title" data-aos="fade-up">
     <h2>Kami juga menyediakan</h2>
     <p>Jasa</p>
-</div>
+  </div>
 
-<div class="container">
-    <div class="row gy-4 isotope-container" data-aos="fade-up" data-aos-delay="200">
-        @foreach($jasa as $service)
-        <div class="col-lg-4 col-md-6 portfolio-item isotope-item">
-            <div class="portfolio-content h-100">
-                @if($service->img_jasa)
-                    <img src="{{ asset('storage/' . $service->img_jasa) }}" 
-                         class="img-fluid" 
-                         alt="{{ $service->nama_jasa }}"
-                         style="width: 100%; height: 300px; object-fit: cover;" />
-                @else
-                    <img src="{{ asset('dewi-1.0.0/assets/img/portfolio/default.jpg') }}" 
-                         class="img-fluid" 
-                         alt="Default Image"
-                         style="width: 100%; height: 300px; object-fit: cover;" />
-                @endif
-                <div class="portfolio-info text-center" >
-                    <h4>{{ $service->nama_jasa }}</h4>
-                    <a  href="https://wa.me/{{ $service->no_whatsapp }}?text={{ urlencode('Halo, saya tertarik dengan ' . $service->nama_jasa )}}" 
-                        target="_blank" 
-                        class="details-link">
-                        <i class="bi bi-whatsapp"></i> <span class="">Hubungi</span>
-                        </a>
-                </div>
+  <div class="container">
+    <div class="row gy-4" data-aos="fade-up" data-aos-delay="200">
+      @foreach($jasa as $service)
+        <div class="col-xl-4 col-md-6">
+          <div class="service-item">
+            <div class="img">
+              <img src="{{ asset('storage/' . $service->img_jasa) }}"
+                   class="img-fluid"
+                   alt="{{ $service->nama_jasa }}"
+                   style="height: 250px; object-fit: cover;" />
             </div>
+            <div class="details position-relative text-center">
+              <h3>{{ $service->nama_jasa }}</h3>
+              <p>{{ Str::limit($service->deskripsi_jasa, 50) }}</p>
+              <p>Rp.{{ number_format($service->harga_jasa, 0, ',', '.') }}</p>
+
+              <div class="d-flex justify-content-center">
+                <a href="#" class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#jasaModal{{ $service->id }}">
+                  Lihat Detail
+                </a>
+                <a href="https://wa.me/{{ $service->no_whatsapp }}?text={{ urlencode('Halo, saya tertarik dengan jasa ' . $service->nama_jasa . '. Apakah masih tersedia?') }}"
+                   target="_blank" class="btn btn-success btn-sm ms-2">
+                  Pesan
+                </a>
+              </div>
+            </div>
+          </div>
         </div>
-        @endforeach
+
+        <!-- Modal Detail Jasa -->
+        <div class="modal fade" id="jasaModal{{ $service->id }}" tabindex="-1" aria-labelledby="jasaModalLabel{{ $service->id }}" aria-hidden="true">
+          <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="jasaModalLabel{{ $service->id }}">{{ $service->nama_jasa }}</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body">
+                <img src="{{ asset('storage/' . $service->img_jasa) }}"
+                     class="img-fluid mb-3"
+                     alt="{{ $service->nama_jasa }}">
+                <p>{{ $service->deskripsi_jasa }}</p>
+                <p class="fw-bold">Harga: Rp.{{ number_format($service->harga_jasa, 0, ',', '.') }}</p>
+              </div>
+              <div class="modal-footer">
+                <a href="https://wa.me/{{ $service->no_whatsapp }}?text={{ urlencode('Halo, saya tertarik dengan jasa ' . $service->nama_jasa . '. Apakah masih tersedia?') }}"
+                   target="_blank" class="btn btn-success">
+                  Pesan via WhatsApp
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      @endforeach
     </div>
-</div>
+  </div>
 </section>
+
   <!-- /Portfolio Section -->
 
 @endsection
