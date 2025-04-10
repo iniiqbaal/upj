@@ -193,11 +193,7 @@
       </div>
 
     </section><!-- /Logo mitra Section -->
-
-
-
-
- <!-- Services Section -->
+<!-- Services Section -->
 <section id="services" class="services section">
     <div class="container section-title" data-aos="fade-up">
         <h2>Produk</h2>
@@ -206,7 +202,6 @@
 
     <div class="container" data-aos="fade-up" data-aos-delay="100">
         @php
-            // Ambil daftar jurusan unik dari produk yang ada
             $departments = $products->groupBy('department');
         @endphp
 
@@ -221,31 +216,41 @@
                                     <img src="{{ asset('storage/' . $item->image) }}" class="img-fluid" alt="{{ $item->name }}" />
                                 </div>
                                 <div class="details position-relative">
-                                <div class="icon">
-    <a href="https://wa.me/{{ $item->whatsapp_number }}?text={{ urlencode('Halo, saya tertarik dengan ' . $item->name . '. Apakah masih tersedia?') }}" 
-       target="_blank">
-        <i class="bi bi-whatsapp"></i> 
-    </a>
-</div>
-                                    <a href="#" data-bs-toggle="modal" data-bs-target="#productModal{{ $item->id }}">
-                                        <h3>{{ $item->name }}</h3>
-                                    </a>
-                                    <p>{{ $item->description }}</p>
+                                    <div class="icon">
+                                        <a href="https://wa.me/{{ $item->whatsapp_number }}?text={{ urlencode('Halo, saya tertarik dengan ' . $item->name . '. Apakah masih tersedia?') }}" 
+                                           target="_blank">
+                                            <i class="bi bi-whatsapp"></i>
+                                        </a>
+                                    </div>
+                                    <h3>{{ $item->name }}</h3>
+                                    <p>{{ Str::limit($item->description, 50) }}</p>
                                     <p>Rp.{{ number_format($item->price, 0, ',', '.') }}</p>
+                                    <a href="#" class="btn btn-primary btn-sm mt-2" data-bs-toggle="modal" data-bs-target="#productModal{{ $item->id }}">
+                                        Lihat Detail
+                                    </a>
                                 </div>
                             </div>
                         </div>
 
-                        <!-- Modal -->
+                        <!-- Modal (simpel & kecil) -->
                         <div class="modal fade" id="productModal{{ $item->id }}" tabindex="-1" aria-labelledby="productModalLabel{{ $item->id }}" aria-hidden="true">
-                            <div class="modal-dialog modal-dialog-centered">
+                            <div class="modal-dialog modal-dialog-centered modal-md">
                                 <div class="modal-content">
-                                    <div class="modal-header">
-                                        <h5 class="modal-title" id="productModalLabel{{ $item->id }}">{{ $item->name }}</h5>
-                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                    <div class="modal-header py-2">
+                                        <h6 class="modal-title" id="productModalLabel{{ $item->id }}">{{ $item->name }}</h6>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Tutup"></button>
                                     </div>
                                     <div class="modal-body text-center">
-                                        <img src="{{ asset('storage/' . $item->image) }}" class="img-fluid rounded" alt="{{ $item->name }}" />
+                                        <img src="{{ asset('storage/' . $item->image) }}" class="img-fluid rounded mb-2" alt="{{ $item->name }}" style="max-height: 200px;" />
+                                        <p class="small mb-1"><strong>Deskripsi:</strong><br>{{ $item->description }}</p>
+                                        <p class="small"><strong>Harga:</strong> Rp.{{ number_format($item->price, 0, ',', '.') }}</p>
+                                    </div>
+                                    <div class="modal-footer py-2 justify-content-between">
+                                        <a href="https://wa.me/{{ $item->whatsapp_number }}?text={{ urlencode('Halo, saya tertarik dengan ' . $item->name . '. Apakah masih tersedia?') }}" 
+                                           target="_blank" class="btn btn-success btn-sm">
+                                            Pesan
+                                        </a>
+                                        <button type="button" class="btn btn-secondary btn-sm" data-bs-dismiss="modal">Kembali</button>
                                     </div>
                                 </div>
                             </div>
