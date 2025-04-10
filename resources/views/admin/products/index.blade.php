@@ -34,15 +34,37 @@
                         <span class="text-muted">Tidak ada gambar</span>
                     @endif
                 </td>
-                <td>
-                    {{ $product->whatsapp_number }}
-                </td>
+                <td>{{ $product->whatsapp_number }}</td>
                 <td>
                     <a href="{{ route('admin.products.edit', $product->id) }}" class="btn btn-warning btn-sm">Edit</a>
-                    <form action="{{ route('admin.products.destroy', $product->id) }}" method="POST" class="d-inline">
-                        @csrf @method('DELETE')
-                        <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('Yakin ingin menghapus produk ini?')">Hapus</button>
-                    </form>
+                    <!-- Tombol Hapus -->
+                    <button type="button" class="btn btn-danger btn-sm" data-bs-toggle="modal" data-bs-target="#modalDelete{{ $product->id }}">
+                        Hapus
+                    </button>
+
+                    <!-- Modal Konfirmasi -->
+                    <div class="modal fade" id="modalDelete{{ $product->id }}" tabindex="-1" aria-labelledby="modalDeleteLabel{{ $product->id }}" aria-hidden="true">
+                      <div class="modal-dialog modal-dialog-centered modal-sm"> {{-- modal-sm: ukuran kecil --}}
+                        <div class="modal-content">
+                          <div class="modal-header">
+                            <h5 class="modal-title" id="modalDeleteLabel{{ $product->id }}">Konfirmasi Hapus</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                          </div>
+                          <div class="modal-body text-center">
+                            Yakin ingin hapus<br><strong>{{ $product->name }}</strong>?
+                          </div>
+                          <div class="modal-footer justify-content-center">
+                            <form action="{{ route('admin.products.destroy', $product->id) }}" method="POST">
+                                @csrf
+                                @method('DELETE')
+                                <button type="submit" class="btn btn-danger">Ya, Hapus</button>
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Batal</button>
+                            </form>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <!-- End Modal -->
                 </td>
             </tr>
             @endforeach
