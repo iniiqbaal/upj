@@ -69,92 +69,75 @@
     <!-- Layout wrapper -->
     <div class="layout-wrapper layout-content-navbar">
       <div class="layout-container">
-        <!-- Menu -->
 
-        <aside id="layout-menu" class="layout-menu menu-vertical menu bg-menu-theme">
-          <div class="app-brand demo">
-            <a href="index.html" class="app-brand-link">
-              {{-- <span class="app-brand-text demo menu-text fw-bolder ms-2">Sneat</span> --}}
-              <span class="app-brand-logo demo">
-               <img src="{{asset('assets/Dewi-1.0.0/assets/img/Banner dan logo/logo-smk-2.png')}}" width="150" alt="">
-              </span>
-            </a>
 
-            <a href="javascript:void(0);" class="layout-menu-toggle menu-link text-large ms-auto d-block d-xl-none">
-              <i class="bx bx-chevron-left bx-sm align-middle"></i>
-            </a>
-          </div>
+<!-- Menu -->
+<aside id="layout-menu" class="layout-menu menu-vertical menu bg-menu-theme">
+  <div class="app-brand demo">
+    <a href="{{ route('dashboard') }}" class="app-brand-link">
+      <span class="app-brand-logo demo">
+        <img src="{{ asset('assets/Dewi-1.0.0/assets/img/Banner dan logo/logo-smk-2.png') }}" width="150" alt="">
+      </span>
+    </a>
 
-          <div class="menu-inner-shadow"></div>
+    <a href="javascript:void(0);" class="layout-menu-toggle menu-link text-large ms-auto d-block d-xl-none">
+      <i class="bx bx-chevron-left bx-sm align-middle"></i>
+    </a>
+  </div>
 
-          <ul class="menu-inner py-1">
-            <!-- Dashboard -->
-            <li class="menu-item active">
-              <a href="{{route('dashboard')}}" class="menu-link">
-                <i class="menu-icon tf-icons bx bx-home-circle"></i>
-                <div data-i18n="Analytics">Home</div>
-              </a>
-            </li>
+  <div class="menu-inner-shadow"></div>
 
-            <!-- Layouts -->
-            <li class="menu-item">
-              <a href="javascript:void(0);" class="menu-link menu-toggle">
-                <i class="menu-icon tf-icons bx bx-layout"></i>
-                <div data-i18n="Layouts">Produksi & Jasa</div>
-              </a>
+  <ul class="menu-inner py-1">
+    <!-- Home -->
+    <li class="menu-item {{ request()->routeIs('dashboard') ? 'active' : '' }}">
+      <a href="{{ route('dashboard') }}" class="menu-link">
+        <i class="menu-icon tf-icons bx bx-home-circle"></i>
+        <div data-i18n="Analytics">Home</div>
+      </a>
+    </li>
 
-              <ul class="menu-sub">
-                {{-- <li class="menu-item">
-                  <a href="{{route('settings.index')}}" class="menu-link">
-                    <div data-i18n="Without menu">Website</div>
-                  </a>
-                </li> --}}
-                <li class="menu-item">
-                  <a href="{{route('admin.products.index')}}" class="menu-link">
-                    <div data-i18n="Without navbar">Produk</div>
-                  </a>
-                </li>
-               
-                
-                <li class="menu-item">
-                  <a href="{{ route('admin.jasa.index') }}" class="menu-link">
-                    <div data-i18n="Blank">Jasa</div>
-                  </a>
-                </li>
-              </ul>
-            </li>
+    <!-- Produksi & Jasa -->
+    <li class="menu-item {{ request()->routeIs('admin.products.*') || request()->routeIs('admin.jasa.*') ? 'open' : '' }}">
+      <a href="javascript:void(0);" class="menu-link menu-toggle">
+        <i class="menu-icon tf-icons bx bx-layout"></i>
+        <div data-i18n="Layouts">Produksi & Jasa</div>
+      </a>
 
-            <li class="menu-header small text-uppercase">
-              <span class="menu-header-text">Kelola Admin</span>
-            </li>
-          
-            <li class="menu-item">
-              <a href="javascript:void(0);" class="menu-link menu-toggle">
-                <i class="menu-icon tf-icons bx bx-lock-open-alt"></i>
-                <div data-i18n="Authentications">Admin</div>
-              </a>
-              <ul class="menu-sub">
-                <li class="menu-item">
-                  <a href="{{route('admin.admins.index')}}" class="menu-link">
-                    <div data-i18n="Basic">Tambah Admin</div>
-                  </a>
-                </li>
-                
-                {{-- <li class="menu-item">
-                  <a href="auth-forgot-password-basic.html" class="menu-link" target="_blank">
-                    <div data-i18n="Basic">Forgot Password</div>
-                  </a>
-                </li> --}}
+      <ul class="menu-sub">
+        <li class="menu-item {{ request()->routeIs('admin.products.*') ? 'active' : '' }}">
+          <a href="{{ route('admin.products.index') }}" class="menu-link">
+            <div data-i18n="Produk">Produk</div>
+          </a>
+        </li>
+        <li class="menu-item {{ request()->routeIs('admin.jasa.*') ? 'active' : '' }}">
+          <a href="{{ route('admin.jasa.index') }}" class="menu-link">
+            <div data-i18n="Jasa">Jasa</div>
+          </a>
+        </li>
+      </ul>
+    </li>
 
-              </ul>
-            </li>
-            
-            
+    <!-- Kelola Admin -->
+    <li class="menu-header small text-uppercase">
+      <span class="menu-header-text">Kelola Admin</span>
+    </li>
 
-         
-          </ul>
-        </aside>
-        <!-- / Menu -->
+    <li class="menu-item {{ request()->routeIs('admin.admins.*') ? 'open' : '' }}">
+      <a href="javascript:void(0);" class="menu-link menu-toggle">
+        <i class="menu-icon tf-icons bx bx-lock-open-alt"></i>
+        <div data-i18n="Authentications">Admin</div>
+      </a>
+      <ul class="menu-sub">
+        <li class="menu-item {{ request()->routeIs('admin.admins.*') ? 'active' : '' }}">
+          <a href="{{ route('admin.admins.index') }}" class="menu-link">
+            <div data-i18n="Tambah Admin">Tambah Admin</div>
+          </a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</aside>
+<!-- akhir menu -->
 
         <!-- Layout container -->
         <div class="layout-page">
