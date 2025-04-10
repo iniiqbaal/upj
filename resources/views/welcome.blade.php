@@ -1,24 +1,25 @@
 @extends('layouts.home')
 
 @section('content')
-    
+
 <main class="main">
 <!-- Hero Section -->
-<section id="hero" class="carousel slide hero" data-bs-ride="carousel" data-bs-interval="1000" data-bs-pause="hover">
-
+<section id="hero" class="carousel slide hero" data-bs-ride="carousel" data-bs-interval="1000" data-bs-pause="hover" style="margin-top: 60px;">
     <div class="carousel-inner">
-        <!-- Slide 1 -->
+        <!-- Slide 1: Teks Promosi -->
         <div class="carousel-item active">
-            <img src="{{ asset('assets/Dewi-1.0.0/assets/img/Banner dan logo/SMKN 2 BANGKALAN.jpg') }}" class="d-block w-100 hero-img" alt="Gedung SMKN 2 Bangkalan">
+            <img src="{{ asset('assets/Dewi-1.0.0/assets/img/Banner dan logo/SMKN 2 BANGKALAN.jpg') }}"
+                class="d-block w-100 hero-img" alt="Gedung SMKN 2 Bangkalan">
             <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-25 p-4 rounded">
-                <h2 class="fs-1 fw-bold text-center">UPJ SMK NEGERI 2 BANGKALAN</h2>
-                <p class="text-light fs-5 text-center">Unit Produksi & Jasa</p>
+                <h2 class="fs-1 fw-bold text-center text-shadow">Tempat Belanja Termurah dari SMK Negeri 2 Bangkalan</h2>
+                <p class="text-light fs-5 text-center text-shadow">Lengkap, terpercaya, dan langsung dari tangan siswa berkompeten!</p>
             </div>
         </div>
 
-        <!-- Slide 2 -->
+        <!-- Slide 2: Pamflet tanpa teks -->
         <div class="carousel-item">
-            <img src="{{ asset('assets/Dewi-1.0.0/assets/img/Banner dan logo/pamflet2fix.jpg') }}" class="d-block w-100 hero-img" alt="Pamflet UPJ SMKN 2 Bangkalan">
+            <img src="{{ asset('assets/Dewi-1.0.0/assets/img/Banner dan logo/pamflet2fix.png') }}"
+                class="d-block w-100 hero-img" alt="Pamflet UPJ SMKN 2 Bangkalan">
         </div>
     </div>
 
@@ -37,7 +38,6 @@
         <button type="button" data-bs-target="#hero" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
         <button type="button" data-bs-target="#hero" data-bs-slide-to="1" aria-label="Slide 2"></button>
     </div>
-
 </section>
 
 <!-- JavaScript untuk Swipe Support -->
@@ -45,16 +45,14 @@
     document.addEventListener("DOMContentLoaded", function () {
         let heroCarousel = document.querySelector("#hero");
         let carousel = new bootstrap.Carousel(heroCarousel, {
-            interval: 10000, // 10 detik
+            interval: 10000,
             ride: "carousel"
         });
 
-        // Restart autoplay setelah interaksi manual
         heroCarousel.addEventListener("slid.bs.carousel", function () {
             carousel.cycle();
         });
 
-        // Tambahkan fitur swipe untuk mobile
         let startX = 0;
         let endX = 0;
 
@@ -68,12 +66,10 @@
 
         heroCarousel.addEventListener("touchend", function () {
             let diffX = startX - endX;
-            if (Math.abs(diffX) > 50) { // Jika geseran cukup jauh
+            if (Math.abs(diffX) > 50) {
                 if (diffX > 0) {
-                    // Geser ke kanan (next)
                     bootstrap.Carousel.getInstance(heroCarousel).next();
                 } else {
-                    // Geser ke kiri (prev)
                     bootstrap.Carousel.getInstance(heroCarousel).prev();
                 }
             }
@@ -81,7 +77,9 @@
     });
 </script>
 
-  <!-- Stats Section -->
+
+<!-- Stats Section -->
+
 
       <!-- About Section -->
       <section id="about" class="about section">
