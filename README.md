@@ -18,7 +18,6 @@ Website ini dibuat sebagai bagian dari Uji Kompetensi Keahlian (UKK) jurusan RPL
 - Manajemen Jasa (tambah, edit, hapus)
 - Sistem kategori jasa & produk
 - Tampilan produk/jasa di halaman utama
-- Fitur pencarian produk & jasa
 - Redirect pemesanan ke WhatsApp
 - Seeder akun admin
 - Log aktivitas admin (jika sudah ditambahkan)
